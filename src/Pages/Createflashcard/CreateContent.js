@@ -144,7 +144,7 @@ const CreateContent = () => {
                   <div className="w-24 h-1 bg-[rgba(212,62,61,255)] rounded-lg "></div>
                 </div>
                 <div className="w-full bg-white p-2 flex justify-between rounded sm:flex-wrap sm:justify-center xm:px-0 drop-shadow-xl">
-                  <div className="m-5 w-3/5 sm:w-4/5">
+                  <div className="m-5 w-3/5 sm:w-4/5 xxm:m-0 xxm:w-full xxm:p-2">
                     <h5 className="text-[rgba(135,146,164,255)] ">
                       Create Group*
                     </h5>

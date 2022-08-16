@@ -15,7 +15,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
             {formik.values.term.length > 0 &&
               formik.values.term.map((data, i) => (
                 <div>
-                  <div className="w-full bg-white p-2 mt-5 flex place-content-evenly form-control rounded sm:block sm:pl-14 items-baseline ">
+                  <div className="w-full bg-white p-2 mt-5 flex place-content-evenly form-control rounded sm:block sm:pl-5 items-baseline ">
                     <div className="rounded-full bg-[rgba(212,62,61,255)] w-7 h-7 text-white flex justify-center items-center sm:mt-2">
                       {i + 1}
                     </div>
@@ -65,7 +65,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                         )}
                       </ErrorMessage>
                     </div>
-                    <div className="flex justify-center self-center w-1/6 sm:w-1/2">
+                    <div className="flex justify-center self-center w-1/6 sm:w-1/2 xxm:w-full">
                       <input
                         id={i}
                         ref={(el) => (termRef.current[i] = el)} //To get reference of selected image
@@ -93,10 +93,10 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                       )}
                     </div>
                     {data.termFile ? (
-                      <div className="bg-white text-[rgba(50,79,234,255)] flex flex-col justify-evenly sm:flex sm:flex-row sm:justify-start">
+                      <div className="bg-white text-[rgba(50,79,234,255)] flex flex-col justify-evenly sm:flex sm:flex-row sm:justify-start items-center">
                         <FaTrashRestoreAlt
                           onClick={() => remove(i)}
-                          className="cursor-pointer sm:ml-12 mb-5"
+                          className="cursor-pointer sm:ml-12 "
                         />
                         <BiEdit
                           size="20px"

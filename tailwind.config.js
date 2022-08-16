@@ -14,9 +14,9 @@ module.exports = {
 
       'sm': { 'max': '585px'},
 
-      'xm': { 'max': '485px'}
+      'xm': { 'max': '485px'},
      
-       
+       'xxm' : {'max': '380px'}
   
     },
   },
