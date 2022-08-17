@@ -96,7 +96,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                       <div className="bg-white text-[rgba(50,79,234,255)] flex flex-col justify-evenly sm:flex sm:flex-row sm:justify-start items-center">
                         <FaTrashRestoreAlt
                           onClick={() => remove(i)}
-                          className="cursor-pointer sm:ml-12 "
+                          className="cursor-pointer sm:ml-12 mb-5 xxm:mb-0"
                         />
                         <BiEdit
                           size="20px"

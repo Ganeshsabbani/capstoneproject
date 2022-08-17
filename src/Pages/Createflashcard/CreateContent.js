@@ -66,7 +66,7 @@ const CreateContent = () => {
         localStorage.setItem("GROUPURLS", JSON.stringify(arr2));
       };
     }
-  console.log("arr2",arr2)
+  
 
 };
 
@@ -148,11 +148,11 @@ const CreateContent = () => {
                     <h5 className="text-[rgba(135,146,164,255)] ">
                       Create Group*
                     </h5>
-                    <div className="flex form-control ">
+                    <div className="flex form-control xxm:flex-wrap ">
                       <Field
                         type="text"
                         name="groupName"
-                        className="border-[#bbc2cd] border-2 rounded font-semibold w-2/5 sm:w-2/4 "
+                        className="border-[#bbc2cd] border-2 rounded font-semibold w-2/5 sm:w-2/4 xxm:w-full "
                         id="groupName"
                         
                       />
@@ -163,7 +163,7 @@ const CreateContent = () => {
                           className="m-2 p-0.5 cursor-pointer absolute right-0"
                         />
                       </div>
-                      <div className="border-[#bbc2cd] border-2 w-1/3  font-semibold rounded ml-5 flex place-content-center  cursor-pointer place-items-center  outline-2  sm:w-1/2 active:translate-y-px ">
+                      <div className="border-[#bbc2cd] border-2 w-1/3  font-semibold rounded ml-5 flex place-content-center  cursor-pointer place-items-center  outline-2  sm:w-1/2 active:translate-y-px xxm:w-full xxm:m-2">
                         <MdOutlineUploadFile
                           color="rgba(50,79,234,255)"
                           className=" mr-2 w-4 h-5 "
@@ -230,7 +230,7 @@ const CreateContent = () => {
                 <div className="flex justify-center mt-10 ">
                   <button
                     type="submit"
-                    className="h-8 w-2/12 rounded bg-[rgba(204,19,19,255)] text-[#fff]"
+                    className="h-8 w-2/12 rounded bg-[rgba(204,19,19,255)] text-[#fff] sm:w-2/6 "
                   >
                     Create
                   </button>
