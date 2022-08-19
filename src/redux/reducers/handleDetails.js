@@ -12,15 +12,14 @@ const handleDetails = (state = cardDetails, action) => {
       break;
 
     case "DELCARD":
-      const storeArr = getUniqueListBy(state.flat(), "groupName");
+     
 
-      function getUniqueListBy(arr, key) {
-        return [...new Map(arr.map((item) => [item[key], item])).values()];
-      }
+      if(state){
 
-      if (storeArr) {
-        return storeArr.filter((x) => x.groupName !== details.groupName);
+       return (Array.from(new Set(state.flat())).filter((x) => x.groupName !== details.groupName));
       }
+        
+     
 
     default:
       return state;

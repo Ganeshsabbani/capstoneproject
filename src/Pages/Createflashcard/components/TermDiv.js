@@ -15,7 +15,10 @@ const TermDiv = ({ formik, editRef, termRef }) => {
             {formik.values.term.length > 0 &&
               formik.values.term.map((data, i) => (
                 <div>
-                  <div className="w-full bg-white p-2 mt-5 flex place-content-evenly form-control rounded sm:block sm:pl-5 items-baseline ">
+                  <div
+                    key={i}
+                    className="w-full bg-white p-2 mt-5 flex place-content-evenly form-control rounded sm:block sm:pl-5 items-baseline "
+                  >
                     <div className="rounded-full bg-[rgba(212,62,61,255)] w-7 h-7 text-white flex justify-center items-center sm:mt-2">
                       {i + 1}
                     </div>
@@ -23,13 +26,13 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                       <h5 className="text-[rgba(135,146,164,255)] ">
                         Enter Term*
                       </h5>
-                      <div className="flex w-full">
+                      <div  className="flex w-full">
                         <Field
                           innerRef={(el) => (editRef.current[i] = el)} //To get reference of selected termName
                           type="text"
                           name={`term.${i}.termName]`}
                           className="border-[#bbc2cd] border-2 rounded-l border-r-0 w-full font-semibold "
-                          id={`termName${i}`}
+                         
                         />
                         <ErrorMessage name={`term.${i}.termName`}>
                           {(error) => (
@@ -57,6 +60,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                           as="textarea"
                           name={`term.${i}.termDefination`}
                           className="border-[#bbc2cd] border-2 rounded resize-none w-full font-semibold overflow-y-scroll "
+                          key={i}
                         />
                       </div>
                       <ErrorMessage name={`term.${i}.termDefination`}>
@@ -65,7 +69,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                         )}
                       </ErrorMessage>
                     </div>
-                    <div className="flex justify-center self-center w-1/6 sm:w-1/2 xxm:w-full">
+                    <div   className="flex justify-center self-center w-1/6 sm:w-full xxm:w-full">
                       <input
                         id={i}
                         ref={(el) => (termRef.current[i] = el)} //To get reference of selected image
@@ -77,6 +81,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                             event.currentTarget.files[0]
                           );
                         }}
+                       
                       />
                       {data.termFile ? (
                         <TermPreview file={data.termFile} />
@@ -93,10 +98,10 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                       )}
                     </div>
                     {data.termFile ? (
-                      <div className="bg-white text-[rgba(50,79,234,255)] flex flex-col justify-evenly sm:flex sm:flex-row sm:justify-start items-center">
+                      <div  className="bg-white text-[rgba(50,79,234,255)] flex flex-col justify-evenly sm:flex sm:flex-row sm:justify-center  items-center">
                         <FaTrashRestoreAlt
                           onClick={() => remove(i)}
-                          className="cursor-pointer sm:ml-12 mb-5 xxm:mb-0"
+                          className="cursor-pointer sm:ml-5 mb-5 xxm:mb-0 sm:mb-0"
                         />
                         <BiEdit
                           size="20px"

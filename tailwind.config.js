@@ -6,7 +6,7 @@ module.exports = {
     screens: {
        'xl':{'max' : '1000px'},
 
-      'lg': {'max': '780px'},
+      'lg': {'max': '820px'},
      
 
       'md': {'max': '660px'},

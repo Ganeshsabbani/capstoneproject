@@ -7,51 +7,42 @@ import { useDispatch } from "react-redux";
 import { delCard } from "../../redux/actions";
 import { useSelector } from "react-redux";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useEffect, useCallback } from "react";
 
 const MainCards = () => {
   const [image, setimage] = useState(JSON.parse(localStorage.getItem("URLS")));
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [del, setDel] = useState(false);
+
 
   const [flashData, setFlashData] = useState(
     JSON.parse(localStorage.getItem("STORE"))
   );
 
-  if (!del) {
     if (flashData.length === 0) {
       //As data do not persist in store
       setFlashData(JSON.parse(localStorage.getItem("values")));
     }
-  }
+  
 
   const handleCards = (card) => {
     localStorage.setItem("cards", JSON.stringify(card));
     navigate(`/details/${card.groupName} `);
   };
 
-  
+  const storeValues = useSelector((state) => state);
+  const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
+
+  if (storeArr) {
+    localStorage.setItem("STORE", JSON.stringify(storeArr));
+  }
 
   const handleDel = (card) => {
-    setDel(true);
     dispatch(delCard(card));
+
     setFlashData(storeArr);
-    localStorage.setItem("STORE", JSON.stringify(storeArr));
-    if (storeArr.length === 0) {
-      setFlashData(JSON.parse(localStorage.getItem("values")));
-    }
   };
 
-  const storeValues = useSelector((state) => state);
-  const storeArr = getUniqueListBy(
-    storeValues.handleDetails.flat(),
-    "groupName"
-  );
-
-  function getUniqueListBy(arr, key) {
-    return [...new Map(arr.map((item) => [item[key], item])).values()];
-  }
-  console.log(del);
   return (
     <div className="bg-[rgba(245,241,236,255)] h-screen">
       <div className="w-full bg-[rgba(245,241,236,255)] flex justify-center ">
@@ -88,7 +79,9 @@ const MainCards = () => {
                     size={"30px"}
                     color={"#d43e3d"}
                     className="absolute right-2 top-2 cursor-pointer"
-                    onClick={() => handleDel(card)}
+                    onClick={() => {
+                      handleDel(card);
+                    }}
                   />
                 </div>
                 <h3 className="mb-3 mt-5 font-semibold ">{card.groupName} </h3>

@@ -85,7 +85,7 @@ function Pagination({ itemsPerPage = 1, flashData, clickTerm, setClickTerm }) {
         pageCount={pageCount}
         previousLabel={<BsArrowLeftShort size={"35px"} />}
         renderOnZeroPageCount={null}
-        activeClassName="text-white bg-[rgba(212,62,61,255)] rounded-full p-2 "
+        activeClassName="text-white bg-[rgba(212,62,61,255)] rounded-full p-2 w-10 h-10 flex justify-center items-center"
       />
     </>
   );

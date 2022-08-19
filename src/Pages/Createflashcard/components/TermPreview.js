@@ -17,7 +17,7 @@ const TermPreview = ({ file }) => {
 
 
   return (
-    <div className="w-28 h-full p-2  xxm:w-full ">
+    <div className="w-28 h-full p-2 sm:w-4/6   ">
       {preview ? <img src={preview} alt="preview" /> : "loading..."}
     </div>
   );

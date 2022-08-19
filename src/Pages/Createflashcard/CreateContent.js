@@ -40,7 +40,7 @@ const CreateContent = () => {
   //Converting image files  uploaded into URL to show on next Page
   const handleUrl = (formData) => {
     const files = [];
-    const groupFile=[]
+   
     formData[formData.length - 1].term.map((item) => files.push(item.termFile));
   
     const arr = [];
@@ -54,18 +54,7 @@ const CreateContent = () => {
       };
     }
 
-    formData.map((item) => groupFile.push(item.groupFile));
-  
-    const arr2 = [];
-  
-    for (let i = 0; i < groupFile.length; i++) {
-      let reader = new FileReader();
-      reader.readAsDataURL(groupFile[i]);
-      reader.onload = function () {
-        arr2.push(reader.result);
-        localStorage.setItem("GROUPURLS", JSON.stringify(arr2));
-      };
-    }
+   
   
 
 };
@@ -94,15 +83,12 @@ const CreateContent = () => {
 
   //Getting values from store and filtering it for no duplicate groupName
   const storeValues = useSelector((state) => state);
-  const storeArr = getUniqueListBy(
-    storeValues.handleDetails.flat(),
-    "groupName"
-  );
+  const storeArr = Array.from(new Set( storeValues.handleDetails.flat()))
 
-  function getUniqueListBy(arr, key) {
-    return [...new Map(arr.map((item) => [item[key], item])).values()];
-  }
+  
+
   if (storeArr) {
+    
     localStorage.setItem("STORE", JSON.stringify(storeArr));
   } else {
     localStorage.setItem("STORE", JSON.stringify(formData));
@@ -230,7 +216,7 @@ const CreateContent = () => {
                 <div className="flex justify-center mt-10 ">
                   <button
                     type="submit"
-                    className="h-8 w-2/12 rounded bg-[rgba(204,19,19,255)] text-[#fff] sm:w-2/6 "
+                    className="h-8 w-2/12 rounded bg-[rgba(204,19,19,255)] text-[#fff] sm:w-2/6 mb-10"
                   >
                     Create
                   </button>
