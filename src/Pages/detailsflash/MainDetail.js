@@ -6,10 +6,9 @@ import {
   MdPrint,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import Model from "./Model";
 import Pagination from "./Pagination";
-
 
 const MainDetail = () => {
   const [flashData, setFlashData] = useState(
@@ -19,23 +18,18 @@ const MainDetail = () => {
   const [clickTerm, setClickTerm] = useState(null);
   const [modal, setModal] = useState(false);
   const [index, setIndex] = useState();
- 
 
   const toggleModal = () => {
     setModal(!modal);
   };
 
   const handleClick = (card, i) => {
-   
     setClickTerm(card);
     setIndex(i);
   };
-   if(image){
-   const arr = flashData.term.map((file, i) => (file.termFile = image[i]));
-   }
-
-
-
+  if (image) {
+    const arr = flashData.term.map((file, i) => (file.termFile = image[i]));
+  }
 
   return (
     <div>
@@ -49,14 +43,14 @@ const MainDetail = () => {
             <h4 className="ml-7 text-[rgba(135,146,164,255)] ">My Flashcard</h4>
           </div>
           <div className="w-full h-1 bg-[#e3e0de]  ">
-                  <div className="w-24 h-1 bg-[rgba(212,62,61,255)] rounded-lg "></div>
-                </div>
+            <div className="w-24 h-1 bg-[rgba(212,62,61,255)] rounded-lg "></div>
+          </div>
         </div>
       </div>
 
       {flashData ? (
         <div className="pt-5 px-16 bg-[rgba(245,241,236,255)] lg:px-8 md:px-3 sm:px-1 h-screen ">
-          <div className="px-20 flex flex-col gap-y-8 justify-between pb-20 xl:px-10 md:px-5">
+          <div className="px-20 flex flex-col gap-y-8 justify-between pb-20 xl:px-10 md:px-5 sm:bg-[rgba(245,241,236,255)] ">
             <div className="flex gap-x-4 flex-row ">
               <div>
                 <Link to="/flashcards">
@@ -94,18 +88,14 @@ const MainDetail = () => {
                 </div>
               </div>
               <div className="  content-between w-3/4 drop-shadow-md justify-center sm:w-full">
-              
-                   <Pagination 
-                   clickTerm={clickTerm}
-                   setClickTerm={setClickTerm}
-                   className="block justify-center"
-                    flashData={flashData}
+                <Pagination
+                  clickTerm={clickTerm}
+                  setClickTerm={setClickTerm}
+                  className="block justify-center"
+                  flashData={flashData}
                 />
-               
-              
-              
               </div>
-              <div className=" flex gap-y-4 flex-col sm:flex-row sm:justify-between xm:flex-wrap  ">
+              <div className=" flex gap-y-4 flex-col sm:flex-row sm:justify-between xm:flex-wrap">
                 <div
                   className=" flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all"
                   onClick={() => toggleModal()}
@@ -113,7 +103,7 @@ const MainDetail = () => {
                   <MdShare size={"20px"} />
                   <h3 className=" font-medium pl-2">Share</h3>
                 </div>
-                <div className=" flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 sm:ml-8  xm:ml-4 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all">
+                <div className=" flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 sm:ml-8  xm:ml-4 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all xxm:ml-0">
                   <MdOutlineFileDownload size={"20px"} />
                   <h3 className=" font-medium pl-2">Download</h3>
                 </div>
@@ -123,8 +113,6 @@ const MainDetail = () => {
                 </div>
               </div>
             </div>
-          
-            
           </div>
           <Model toggleModal={toggleModal} modal={modal} />
         </div>

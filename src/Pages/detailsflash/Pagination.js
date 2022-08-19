@@ -78,7 +78,7 @@ function Pagination({ itemsPerPage = 1, flashData, clickTerm, setClickTerm }) {
     <>
       <Items currentItems={currentItems} clickTerm={clickTerm} />
       <ReactPaginate
-        className="flex justify-center gap-x-6 text-xl mt-3"
+        className="flex justify-center gap-x-6 text-xl mt-3 "
         nextLabel={<BsArrowRightShort size={"35px"} />}
         onPageChange={handlePageClick}
         pageRangeDisplayed={1}

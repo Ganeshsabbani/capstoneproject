@@ -117,7 +117,7 @@ const TermDiv = ({ formik, editRef, termRef }) => {
                   </div>
                 </div>
               ))}
-            <div className="px-10 pb-10 bg-[#fff] sm:pt-4">
+            <div className="px-10 pb-10 bg-[#fff] sm:pt-4 text-[rgba(50,79,234,255)] ">
               <button
                 type="button"
                 onClick={() =>

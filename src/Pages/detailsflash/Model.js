@@ -1,5 +1,4 @@
 import React from 'react'
-import "./modal.css"
 import { BiCopy,BiShareAlt } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsFacebook,BsLinkedin ,BsTwitter} from "react-icons/bs";
@@ -25,24 +24,25 @@ const Model = ({toggleModal,modal }) => {
       {modal && (
         <div className="modal w-full h-full fixed inset-0" >
           <div onClick={toggleModal} className="overlay w-full h-full fixed inset-0 bg-[rgba(49,49,49,0.8)] "></div>
-          <div className="modal-content p-16 rounded-lg  ">
+          <div className="modal-content p-16 rounded-lg absolute top-2/4 left-2/4 -translate-y-1/2 -translate-x-1/2 leading-normal  bg-[#f1f1f1] w-3/6 
+             md:w-9/12  xl:w-4/6 lg:p-8 sm:p-4 sm:w-5/6 xm:w-11/12  ">
             <h1 className="font-semibold text-black text-2xl" >Share</h1>
             <div className="flex text-lg my-6">
-                <h3 className="text-lg md:text-xs">Link</h3>
+                <h3 className="text-lg xm:text-sm">Link</h3>
                
-                <h3 className="mx-2" >{window.location.href} </h3> 
+                <h3 className="mx-2 xm:text-sm " >{window.location.href} </h3> 
                 
                 <CopyToClipboard text={value}
                  onCopy={() => setcopied(true)}>
-                     <BiCopy size={"20px"} className="cursor-pointer mx-1" />
+                     <BiCopy size={"20px"} className="cursor-pointer mx-1 xxm:w-10 " />
                </CopyToClipboard>
 
                
-               <BiShareAlt size={"20px"} className="mx-1 cursor-pointer" />
+               <BiShareAlt size={"20px"} className="mx-1 cursor-pointer xxm:w-10" />
 
             </div>
-            <div className="flex justify-between">
-                <BsFacebook size={"30px"}  color='#1976d2' className ="cursor-pointer" />
+            <div className="flex justify-between  ">
+                <BsFacebook size={"30px"}  color='#1976d2' className ="cursor-pointer  " />
                 <BsLinkedin size={"30px"} color='#0077b7' className ="cursor-pointer"  />
                 <FaWhatsappSquare size={"30px"}  color= "#2ba81c" className ="cursor-pointer"  />
                 <BsTwitter size={"30px"}  color= "#1d9bf0" className ="cursor-pointer" />
