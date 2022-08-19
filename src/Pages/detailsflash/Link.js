@@ -18,9 +18,9 @@ const Link = () => {
   return (
     <div>
       <div className="flex text-lg my-6">
-        <h3 className="text-lg xm:text-sm">Link</h3>
+        <h3 className="text-lg xm:text-sm xxm:text-[10px] ">Link</h3>
 
-        <h3 className="mx-2 xm:text-sm ">{window.location.href} </h3>
+        <h3 className="mx-2 xm:text-sm xxm:text-[10px]  ">{window.location.href} </h3>
 
         <CopyToClipboard text={value} onCopy={() => setcopied(true)}>
           <BiCopy size={"20px"} className="cursor-pointer mx-1 xxm:m-px " />
