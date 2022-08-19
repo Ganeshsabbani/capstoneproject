@@ -1,14 +1,11 @@
 import React from "react";
-import {
-  MdArrowBack,
-  MdShare,
-  MdOutlineFileDownload,
-  MdPrint,
-} from "react-icons/md";
+import { MdArrowBack} from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Model from "./Model";
 import Pagination from "./Pagination";
+import DetailsHeader from "./DetailsHeader";
+import SharingButtons from "./SharingButtons";
 
 const MainDetail = () => {
   const [flashData, setFlashData] = useState(
@@ -33,20 +30,7 @@ const MainDetail = () => {
 
   return (
     <div>
-      <div className="w-screen bg-[rgba(245,241,236,255)] flex justify-center ">
-        <div className="w-4/5  bg-[rgba(245,241,236,255)] mt-5 ">
-          <h3 className="font-semibold">Create Flashcard</h3>
-          <div className="flex  my-4 ">
-            <Link to="/">
-              <h4 className="text-[rgba(212,62,61,255)] ">Create New</h4>
-            </Link>
-            <h4 className="ml-7 text-[rgba(135,146,164,255)] ">My Flashcard</h4>
-          </div>
-          <div className="w-full h-1 bg-[#e3e0de]  ">
-            <div className="w-24 h-1 bg-[rgba(212,62,61,255)] rounded-lg "></div>
-          </div>
-        </div>
-      </div>
+     <DetailsHeader />
 
       {flashData ? (
         <div className="pt-5 px-16 bg-[rgba(245,241,236,255)] lg:px-8 md:px-3 sm:px-1 h-screen ">
@@ -95,30 +79,14 @@ const MainDetail = () => {
                   flashData={flashData}
                 />
               </div>
-              <div className=" flex gap-y-4 flex-col sm:flex-row sm:justify-between xm:flex-wrap">
-                <div
-                  className=" flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all"
-                  onClick={() => toggleModal()}
-                >
-                  <MdShare size={"20px"} />
-                  <h3 className=" font-medium pl-2">Share</h3>
-                </div>
-                <div className=" flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 sm:ml-8  xm:ml-4 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all xxm:ml-0">
-                  <MdOutlineFileDownload size={"20px"} />
-                  <h3 className=" font-medium pl-2">Download</h3>
-                </div>
-                <div className="share flex flex-row items-center justify-center bg-white rounded-lg drop-shadow-md px-6 py-2 sm:ml-8 xm:ml-0 cursor-pointer active:translate-y-px hover:scale-110 hover:transition-all">
-                  <MdPrint size={"20px"} />
-                  <h3 className=" font-medium pl-2">Print</h3>
-                </div>
-              </div>
+           <SharingButtons toggleModal={toggleModal}/>
             </div>
           </div>
           <Model toggleModal={toggleModal} modal={modal} />
         </div>
       ) : (
         <div>
-          <h1>Loading...</h1>
+          <h1>Please Create Cards</h1>
         </div>
       )}
     </div>

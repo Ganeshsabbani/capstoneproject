@@ -6,7 +6,7 @@ import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 function Items({ currentItems, clickTerm }) {
   return (
     <>
-      {clickTerm ? (
+      {clickTerm ? ( //checking if user clicked on term or pagination
         <div>
           <div className="flex  bg-white rounded p-6 h-80  ">
             {clickTerm.termFile ? (
@@ -25,25 +25,26 @@ function Items({ currentItems, clickTerm }) {
           </div>
         </div>
       ) : (
-        currentItems.map((item) => (
-          <div>
-            <div className="flex  bg-white rounded p-6 h-80  ">
-              {item.termFile ? (
-                <div className="bg-white w-2/4">
-                  <img
-                    src={item.termFile}
-                    alt="images"
-                    className="h-full"
-                  ></img>
-                </div>
-              ) : null}
-
-              <div className=" bg-white w-2/4 p-3 overflow-y-scroll scrollbar-thin  scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-red-500  ">
-                <h1>{item.termDefination.slice(0, 400)} </h1>
+        ( 
+          currentItems.map((item) => (
+        <div>
+          <div className="flex  bg-white rounded p-6 h-80  ">
+            {item.termFile ? (
+              <div className="bg-white w-2/4">
+                <img
+                  src={item.termFile}
+                  alt="images"
+                  className="h-full"
+                ></img>
               </div>
+            ) : null}
+
+            <div className=" bg-white w-2/4 p-3 overflow-y-scroll scrollbar-thin  scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-red-500  ">
+              <h1>{item.termDefination.slice(0, 400)} </h1>
             </div>
           </div>
-        ))
+        </div>
+      )))
       )}
     </>
   );
@@ -54,12 +55,10 @@ function Pagination({ itemsPerPage = 1, flashData, clickTerm, setClickTerm }) {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
 
   const [itemOffset, setItemOffset] = useState(0);
 
   useMemo(() => {
-    // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
 
     setCurrentItems(flashData.term.slice(itemOffset, endOffset));

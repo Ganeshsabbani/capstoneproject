@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+//Getting Current Date
 const DateFeature = () => {
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;

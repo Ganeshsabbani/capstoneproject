@@ -12,14 +12,12 @@ const handleDetails = (state = cardDetails, action) => {
       break;
 
     case "DELCARD":
-     
-
-      if(state){
-
-       return (Array.from(new Set(state.flat())).filter((x) => x.groupName !== details.groupName));
+      //Filtering to remove selected card
+      if (state) {
+        return Array.from(new Set(state.flat())).filter(
+          (x) => x.groupName !== details.groupName
+        );
       }
-        
-     
 
     default:
       return state;

@@ -1,5 +1,5 @@
 
-
+//Saving Form details in store
 export const formDetails=(details)=>{
     return {
         type :"FORMDETAILS",
@@ -7,6 +7,8 @@ export const formDetails=(details)=>{
     }
 }
 
+
+//Sending Clicked Card to Store
 export const delCard=(card)=>{
     return {
         type :"DELCARD",

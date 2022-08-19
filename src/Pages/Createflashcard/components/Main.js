@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import CreateContent from '../CreateContent'
+import CreateContent from './CreateContent'
 
 const Main = () => {
   return (

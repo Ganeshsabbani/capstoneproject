@@ -2,16 +2,16 @@ import React from "react";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { useRef, useState, useEffect } from "react";
 import { MdOutlineUploadFile } from "react-icons/md";
-import { Formik, Form, Field, FieldArray, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Preview from "./components/Preview";
+import Preview from "./Preview";
 import { useDispatch } from "react-redux";
-import { formDetails } from "../../redux/actions";
+import { formDetails } from "../../../redux/actions";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import TermDiv from "./components/TermDiv";
+import TermDiv from "./TermDiv";
 
 const CreateContent = () => {
   const [currentValue, setCurrentValue] = useState("");
@@ -88,7 +88,6 @@ const CreateContent = () => {
   
 
   if (storeArr) {
-    
     localStorage.setItem("STORE", JSON.stringify(storeArr));
   } else {
     localStorage.setItem("STORE", JSON.stringify(formData));

@@ -1,70 +1,68 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import DateFeature from "./DateFeature";
 import { useDispatch } from "react-redux";
 import { delCard } from "../../redux/actions";
 import { useSelector } from "react-redux";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useEffect, useCallback } from "react";
+import MyFlashcardHeader from "./MyFlashcardHeader";
+import { useEffect } from "react";
 
 const MainCards = () => {
   const [image, setimage] = useState(JSON.parse(localStorage.getItem("URLS")));
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
+  const storeValues = useSelector((state) => state);
   const [flashData, setFlashData] = useState(
-    JSON.parse(localStorage.getItem("STORE"))
+    Array.from(new Set(storeValues.handleDetails.flat()))
   );
 
-    if (flashData.length === 0) {
-      //As data do not persist in store
-      setFlashData(JSON.parse(localStorage.getItem("values")));
-    }
-  
+  if (flashData.length === 0) {
+    //As data do not persist in store
+    setFlashData(JSON.parse(localStorage.getItem("values")));
+  }
 
+  //Navigating to details page
   const handleCards = (card) => {
     localStorage.setItem("cards", JSON.stringify(card));
     navigate(`/details/${card.groupName} `);
   };
 
-  const storeValues = useSelector((state) => state);
+  //Getting updated store values after delete
+
   const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
 
   if (storeArr) {
     localStorage.setItem("STORE", JSON.stringify(storeArr));
   }
 
+   useEffect(() => {
+    const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
+    console.log(storeArr)
+  
+    localStorage.setItem("STORE", JSON.stringify(storeArr));
+     
+
+   },[storeArr])
+   
+
+  //Dispatching selected term to store
   const handleDel = (card) => {
     dispatch(delCard(card));
-
     setFlashData(storeArr);
   };
 
   return (
     <div className="bg-[rgba(245,241,236,255)] h-screen">
-      <div className="w-full bg-[rgba(245,241,236,255)] flex justify-center ">
-        <div className="w-4/5  bg-[rgba(245,241,236,255)] mt-5 ">
-          <h3 className="font-semibold">Create Flashcard</h3>
-          <div className="flex  my-4 ">
-            <Link to="/">
-              <h4 className="text-[rgba(135,146,164,255)] ">Create New</h4>
-            </Link>
-            <h4 className="ml-7 text-[rgba(212,62,61,255)] ">My Flashcard</h4>
-          </div>
-          <div className="w-full h-1 bg-[#e3e0de] ">
-            <div className="w-32 h-1 ml-24 bg-[rgba(212,62,61,255)] rounded-lg "></div>
-          </div>
-        </div>
-      </div>
+     <MyFlashcardHeader />
 
       <div className="w-full bg-[rgba(245,241,236,255)] flex justify-center">
         <div className="main flex justify-start flex-wrap p-3 gap-20 gap-y-10 bg-[rgba(245,241,236,255)] pt-10 relative w-4/5 pl-0 md:justify-center">
           {flashData !== null ? (
             flashData.map((card, i) => (
-              <div className="bg-[#fff] w-56 h-62  items-center p-3 flex flex-col rounded-lg relative hover:scale-110 hover:transition-all transition-shadow drop-shadow-2xl">
+              <div key={i} className="bg-[#fff] w-56 h-62  items-center p-3 flex flex-col rounded-lg relative hover:scale-110 hover:transition-all transition-shadow drop-shadow-2xl">
                 {image ? (
                   <div className="w-14 h-14  rounded-full absolute -top-6">
                     <img
