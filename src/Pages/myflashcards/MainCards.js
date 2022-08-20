@@ -42,16 +42,11 @@ const MainCards = () => {
   window.onload = () => {
     dispatch(formDetails(JSON.parse(localStorage.getItem("values"))));
   };
-   
-   useEffect(() => {
-    const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
-    console.log(storeArr)
-  
-    localStorage.setItem("STORE", JSON.stringify(storeArr));
-     
 
-   },[storeArr])
-   
+  useEffect(() => {
+    const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
+    localStorage.setItem("STORE", JSON.stringify(storeArr));
+  }, [storeArr]);
 
   //Dispatching selected term to store
   const handleDel = (card) => {
@@ -61,13 +56,16 @@ const MainCards = () => {
 
   return (
     <div className="bg-[rgba(245,241,236,255)] h-screen">
-     <MyFlashcardHeader />
+      <MyFlashcardHeader />
 
       <div className="w-full bg-[rgba(245,241,236,255)] flex justify-center">
         <div className="main flex justify-start flex-wrap p-3 gap-20 gap-y-10 bg-[rgba(245,241,236,255)] pt-10 relative w-4/5 pl-0 md:justify-center">
           {flashData !== null ? (
             flashData.map((card, i) => (
-              <div key={i} className="bg-[#fff] w-56 h-62  items-center p-3 flex flex-col rounded-lg relative hover:scale-110 hover:transition-all transition-shadow drop-shadow-2xl">
+              <div
+                key={i}
+                className="bg-[#fff] w-56 h-62  items-center p-3 flex flex-col rounded-lg relative hover:scale-110 hover:transition-all transition-shadow drop-shadow-2xl"
+              >
                 {image ? (
                   <div className="w-14 h-14  rounded-full absolute -top-6">
                     <img
