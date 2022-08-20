@@ -21,7 +21,7 @@
 
 This Flashcard app can be used to create small notes named cards in which you can add your detailed information with images. You can create muliple cards according to your need and delete if needed. 
 
-Link: https://funny-kelpie-9138b3.netlify.app/
+Link: https://exquisite-toffee-c85784.netlify.app/
 
 So what are you waiting for try it out Now.
 
