@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FlashCard App
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📕 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [About](#-about)
+- [Project Members](#-project-members)
+- [Features It has](#-features-it-has)
+- [Build With](#-build-with)
+- [Getting Started](#-getting-started)
+- [Contact](#-contact)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📖 About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This Flashcard app can be used to create small notes named cards in which you can add your detailed information with images. You can create muliple cards according to your need and delete if needed. 
 
-### `npm run build`
+Link: https://funny-kelpie-9138b3.netlify.app/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+So what are you waiting for try it out Now.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✅ Project Members
 
-### `npm run eject`
+ - Ganesh Sabbani   <a href="https://www.linkedin.com/in/ganesh-sabbani63/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+ 
+ - Harshvardhan Singh   <a href="https://www.linkedin.com/in/harshvrdhansingh/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Features It has
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Page:01 **CreateFlashCard**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Giving group name and uploading image
+- Formik is used for form control
+- Navigate to the My Flashcard page after successfully creating flashcard
+- Validation using formik yup
+- Add more functionality to add more fields
+- Fully responsive for all devices
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Page:02 **MyFlashCard**
 
-## Learn More
+- Displaying all flashcards 
+- Navigating to card description on clicking view card
+- Deleting feature to remove card 
+- Fully responsive for all devices
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Page:03 **Card Details**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Displaying all card details in correct format
+- User can navigate through cards by using pagination or by clicking on specific card detail
+- User can copy link of flashcard using share option
+- Fully responsive for all devices
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🚀 Build With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- HTML
+- TAILWIND CSS
+- JAVASCRIPT
+- REACT JS
+- REACT TOASTIFY
+- REACT_PAGINATE
+- REDUX
+- FORMIK
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🔌 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- clone the repository on your local machine with the command below in your terminal, and cd into the **flashcard** folder
 
-### Deployment
+```
+git clone https://github.com/Ganeshsabbani/capstoneproject.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+cd flashcard
+```
 
-### `npm run build` fails to minify
+- install dependencies (if you are using **yarn** then do with that)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm install
+```
+
+- start the server
+
+```
+npm start
+
+```
+
+---
+
+## 🤝 Contact
+
+- Ganesh Sabbani: ganeshsabbani63@gmail.com
+
+- Harshvardhan Singh: hv.singh094@gmail.com 
+
+
+
+---
+
