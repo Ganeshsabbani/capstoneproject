@@ -35,14 +35,12 @@ const CreateContent = () => {
     setLocalValues(JSON.parse(localStorage.getItem("values")));
   }, []);
 
-  
-
   //Converting image files  uploaded into URL to show on next Page
   const handleUrl = (formData) => {
     const files = [];
-   
+
     formData[formData.length - 1].term.map((item) => files.push(item.termFile));
-  
+
     const arr = [];
 
     for (let i = 0; i < files.length; i++) {
@@ -53,11 +51,7 @@ const CreateContent = () => {
         localStorage.setItem("URLS", JSON.stringify(arr));
       };
     }
-
-   
-  
-
-};
+  };
 
   //ValidationSchema Using Formik Yup
   const validationSchema = Yup.object({
@@ -83,9 +77,7 @@ const CreateContent = () => {
 
   //Getting values from store and filtering it for no duplicate groupName
   const storeValues = useSelector((state) => state);
-  const storeArr = Array.from(new Set( storeValues.handleDetails.flat()))
-
-  
+  const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
 
   if (storeArr) {
     localStorage.setItem("STORE", JSON.stringify(storeArr));
@@ -101,7 +93,6 @@ const CreateContent = () => {
       validationSchema={validationSchema}
     >
       {(formik) => {
-     
         return (
           <Form>
             <div className="w-full bg-[rgba(245,241,236,255)] flex justify-center ">
@@ -139,7 +130,6 @@ const CreateContent = () => {
                         name="groupName"
                         className="border-[#bbc2cd] border-2 rounded font-semibold w-2/5 sm:w-2/4 xxm:w-full "
                         id="groupName"
-                        
                       />
 
                       <div className="relative">
@@ -164,7 +154,6 @@ const CreateContent = () => {
                               event.currentTarget.files[0]
                             );
                           }}
-                      
                         />
 
                         <div

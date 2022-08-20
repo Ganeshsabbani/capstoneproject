@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import MyFlashcardHeader from "./MyFlashcardHeader";
 import { useEffect } from "react";
+import { formDetails } from "../../redux/actions";
 
 const MainCards = () => {
   const [image, setimage] = useState(JSON.parse(localStorage.getItem("URLS")));
@@ -38,6 +39,10 @@ const MainCards = () => {
     localStorage.setItem("STORE", JSON.stringify(storeArr));
   }
 
+  window.onload = () => {
+    dispatch(formDetails(JSON.parse(localStorage.getItem("values"))));
+  };
+   
    useEffect(() => {
     const storeArr = Array.from(new Set(storeValues.handleDetails.flat()));
     console.log(storeArr)
