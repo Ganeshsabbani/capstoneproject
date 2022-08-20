@@ -9,10 +9,11 @@
 ## 📕 Table of Contents
 
 - [About](#-about)
--[Project Members](#-Project Members)
+- [Project Members](#-project-members)
 - [Features It has](#-features-it-has)
--[Build With](#-Build-with)
+- [Build With](#-build-with)
 - [Getting Started](#-getting-started)
+- [Contact](#-contact)
 
 ---
 
@@ -28,8 +29,9 @@ So what are you waiting for try it out Now.
 
 ## ✅ Project Members
 
- Ganesh Sabbani   <a href="https://www.linkedin.com/in/ganesh-sabbani63/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  Harshvardhan Singh   <a href="https://www.linkedin.com/in/harshvrdhansingh/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+ - Ganesh Sabbani   <a href="https://www.linkedin.com/in/ganesh-sabbani63/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+ 
+ - Harshvardhan Singh   <a href="https://www.linkedin.com/in/harshvrdhansingh/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 ---
 
 ## 🚀 Features It has
@@ -62,14 +64,14 @@ Page:03 **Card Details**
 
 ## 🚀 Build With
 
--HTML
--TAILWIND CSS
--JAVASCRIPT
--REACT JS
--REACT TOASTIFY
--REACT_PAGINATE
--REDUX
--FORMIK
+- HTML
+- TAILWIND CSS
+- JAVASCRIPT
+- REACT JS
+- REACT TOASTIFY
+- REACT_PAGINATE
+- REDUX
+- FORMIK
 
 
 ---
@@ -94,8 +96,18 @@ npm install
 
 ```
 npm start
+
 ```
 
 ---
 
+## 🤝 Contact
+
+- Ganesh Sabbani: ganeshsabbani63@gmail.com
+
+- Harshvardhan Singh: hv.singh094@gmail.com 
+
+
+
+---
 
